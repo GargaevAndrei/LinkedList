@@ -33,17 +33,18 @@ namespace LinkedList
         public Node temp;
         public void printList()
         {
-            while(head != null)
+            temp = head;
+            while(temp != null)
             {
-                Console.WriteLine("val = {0}", head.val);
-                head = head.next;
+                Console.WriteLine("val = {0}", temp.val);
+                temp = temp.next;
             }
             Console.WriteLine();
         }
         public void addNodeFront(Node n)
         {
             temp = head;
-            while (temp != null)
+            while (temp.next != null)
                 temp = temp.next;
 
             temp.next = n;
@@ -92,6 +93,7 @@ namespace LinkedList
 
             l.addNodeBack(new Node(5));
             l.addNodeFront(new Node(7));
+            l.addNodePosition(new Node(9), 2);
             l.printList();
 
             Console.ReadKey();
